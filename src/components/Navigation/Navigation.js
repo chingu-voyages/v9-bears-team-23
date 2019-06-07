@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './styles.scss'
 
 // reactstrap components
 import {
@@ -29,7 +28,9 @@ class DemoNavbar extends React.Component {
         >
           <Container>
             <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
-              Skill Sharpener
+              <Link to="/" style={{ color: 'white' }}>
+                Skill Sharpener
+              </Link>
             </NavbarBrand>
             <button
               aria-controls="navbar-primary"
@@ -71,22 +72,36 @@ class DemoNavbar extends React.Component {
               <Nav className="ml-lg-auto" navbar>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Discover <span className="sr-only">(current)</span>
+                    Ads <span className="sr-only">(current)</span>
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Profile
+                    New ad
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                    Categories
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                    Tutors
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <Button color="danger" outline type="button">
-                    Login
+                    <Link to="/login" style={{ color: 'white' }}>
+                      Login
+                    </Link>
                   </Button>
                 </NavItem>
                 <NavItem>
                   <Button color="danger" type="button">
-                    Register
+                    <Link to="/register" style={{ color: 'white' }}>
+                      Register
+                    </Link>
                   </Button>
                 </NavItem>
                 <UncontrolledDropdown nav>
