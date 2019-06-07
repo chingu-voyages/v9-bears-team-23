@@ -1,12 +1,28 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
 import 'bootstrap/dist/css/bootstrap.css';
+import '../assets/scss/global.scss';
+import "../assets/vendor/nucleo/css/nucleo.css";
+import "../assets/vendor/font-awesome/css/font-awesome.min.css";
+
+
+import Landing from '../components/Landing/Landing';
+import Login from '../components/Login/Login'
+import Register from '../components/Register/Register'
 
 function App() {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
