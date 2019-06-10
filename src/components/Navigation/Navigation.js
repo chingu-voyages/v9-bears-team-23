@@ -72,7 +72,10 @@ class DemoNavbar extends React.Component {
               <Nav className="ml-lg-auto" navbar>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Ads <span className="sr-only">(current)</span>
+                    <Link to="/ads" style={{ color: 'white' }}>
+                      Ads
+                    </Link>
+                    <span className="sr-only">(current)</span>
                   </NavLink>
                 </NavItem>
                 <NavItem>
