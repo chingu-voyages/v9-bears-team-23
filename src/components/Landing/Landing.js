@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 
-import Navigation from '../Navigation/Navigation';
+
 import Footer from '../Footer/Footer';
 
 
@@ -28,7 +28,6 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}

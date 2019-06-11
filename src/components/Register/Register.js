@@ -21,7 +21,6 @@ class Register extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
