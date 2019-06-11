@@ -10,7 +10,7 @@ const options = [
 
 export default function SearchPanel() {
   return (
-    <Row>
+    <Row className="pt-2 pb-5">
       <Col md={6}>
         <Select
           options={options}

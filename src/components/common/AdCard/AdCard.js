@@ -5,12 +5,9 @@ import StarRating from '../StarRating/StarRating'
 // reactstrap components
 import {
   Card,
-  CardHeader,
   CardBody,
   CardImg,
   CardTitle,
-  CardText,
-  Button
 
 } from "reactstrap";
 import './style.scss'
