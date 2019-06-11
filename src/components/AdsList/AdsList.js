@@ -1,6 +1,8 @@
 import React from 'react'
 
-import AdCard from './AdCard'
+import AdCard from '../common/AdCard/AdCard'
+import SearchPanel from './SearchPanel';
+
 // reactstrap components
 import {
   Row,
@@ -11,7 +13,12 @@ import {
 
 export default function AdsList() {
   return (
-    <Container>
+    <Container className="container py-5">
+      <Row>
+        <Col sm="12">
+          <SearchPanel />
+        </Col>
+      </Row>
       <Row>
         <Col sm="4">
           <AdCard />

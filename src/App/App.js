@@ -11,11 +11,13 @@ import Landing from '../components/Landing/Landing';
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
 import AdsList from '../components/AdsList/AdsList'
+import Navigation from '../components/Navigation/Navigation';
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+        <Navigation />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/login" component={Login} />
