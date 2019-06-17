@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import AdCard from '../common/AdCard/AdCard'
 import SearchPanel from './SearchPanel';
@@ -13,6 +13,9 @@ import {
 } from "reactstrap";
 
 export default function AdsList() {
+  const [ads, setAds] = useState([])
+
+
   return (
     <Container className="container py-5">
       <Row>
