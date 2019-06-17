@@ -42,35 +42,33 @@ class Landing extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
+                        This is skill sharpener{" "}
+                        <span>A place where you can learn everything</span>
                       </h1>
                       <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                        Stress-free, convenient online one-to-one mentoring sessions.
                       </p>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                            <i className="fa fa-info-circle" />
                           </span>
-                          <span className="btn-inner--text">Components</span>
+                          <span className="btn-inner--text">About</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
-                          href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
+                            <i className="ni ni-bold-right" />
                           </span>
                           <span className="btn-inner--text">
-                            Download React
+                            Start now!
                           </span>
                         </Button>
                       </div>
