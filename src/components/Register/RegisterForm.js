@@ -1,5 +1,7 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import auth from '../../api/auth-helper'
+import { validateRegisterInput } from '../../utils/validate-register'
+import { create } from '../../api/api-user'
 // reactstrap components
 import {
   Button,
@@ -14,8 +16,37 @@ import {
 } from "reactstrap";
 
 export default function RegisterForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  async function register() {
+    const user = {
+      name: name || undefined,
+      email: email || undefined,
+      password: password || undefined
+    }
+    try {
+      const valid = validateRegisterInput(user)
+      if (valid) {
+        await create(user).then((data) => {
+          if (data.error) {
+            console.log(data.error)
+          } else {
+            setName('')
+            setEmail('')
+            setPassword('')
+          }
+        })
+      }
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
-    <Form role="form">
+    <Form role="form" >
       <FormGroup>
         <InputGroup className="input-group-alternative mb-3">
           <InputGroupAddon addonType="prepend">
@@ -23,7 +54,12 @@ export default function RegisterForm() {
               <i className="ni ni-hat-3" />
             </InputGroupText>
           </InputGroupAddon>
-          <Input placeholder="Name" type="text" />
+          <Input
+            placeholder="Name"
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
         </InputGroup>
       </FormGroup>
       <FormGroup>
@@ -33,7 +69,12 @@ export default function RegisterForm() {
               <i className="ni ni-email-83" />
             </InputGroupText>
           </InputGroupAddon>
-          <Input placeholder="Email" type="email" />
+          <Input
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
         </InputGroup>
       </FormGroup>
       <FormGroup>
@@ -46,7 +87,8 @@ export default function RegisterForm() {
           <Input
             placeholder="Password"
             type="password"
-            autoComplete="off"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
         </InputGroup>
       </FormGroup>
@@ -88,6 +130,7 @@ export default function RegisterForm() {
           className="mt-4"
           color="primary"
           type="button"
+          onClick={register}
         >
           Create account
                     </Button>

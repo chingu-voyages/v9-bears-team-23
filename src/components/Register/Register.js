@@ -8,7 +8,6 @@ import {
 } from "reactstrap";
 
 // core components
-import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
 import RegisterCard from './RegisterCard'
 

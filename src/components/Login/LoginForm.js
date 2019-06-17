@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import useErrorHandler from '../../utils/custom-hooks'
-import { apiRequest, validateLoginForm } from "../../utils/helpers";
-// reactstrap components
+import React, { useState } from 'react'
+import { signin } from '../../api/api-auth';
+import auth from '../../api/auth-helper'
+import { validateLoginInput } from '../../utils/validate-login'
 import {
   Button,
   FormGroup,
@@ -15,27 +15,33 @@ import {
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, showError] = useErrorHandler(null);
 
-
-  const handleSubmit = async e => {
+  async function login() {
+    const user = {
+      email: email || undefined,
+      password: password || undefined
+    }
     try {
-      setLoading(true);
-      const userData = await apiRequest(
-        "https://jsonplaceholder.typicode.com/users",
-        "post",
-        { email: email, password: password }
-      );
-      const { id, email } = userData;
-    } catch (err) {
-      setLoading(false);
-      showError(err.message);
+      const valid = validateLoginInput(user)
+      if (valid) {
+        await signin(user).then((data) => {
+          if (data.error) {
+            console.log(data.error)
+          } else {
+            auth.authenticate(data, () => {
+              setEmail('')
+              setPassword('')
+            })
+          }
+        })
+      }
+    } catch (error) {
+      console.log(error.message)
     }
   }
 
   return (
-    <Form role="form">
+    <Form role="form" onSubmit={e => e.preventDefault() && false}>
       <FormGroup className="mb-3">
         <InputGroup className="input-group-alternative">
           <InputGroupAddon addonType="prepend">
@@ -84,7 +90,7 @@ export default function LoginForm() {
           className="my-4"
           color="primary"
           type="button"
-          onClick={e => handleSubmit(e)}
+          onClick={login}
         >
           Sign in
                           </Button>
