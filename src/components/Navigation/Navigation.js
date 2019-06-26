@@ -94,6 +94,18 @@ class DemoNavbar extends React.Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                    Dashboard
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                    <Link to="/profile" style={{ color: 'white' }}>
+                      Profile
+                    </Link>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
                   <Button color="danger" outline type="button">
                     <Link to="/login" style={{ color: 'white' }}>
                       Login
