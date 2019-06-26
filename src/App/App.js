@@ -13,6 +13,7 @@ import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
 import AdsList from '../components/AdsList/AdsList'
 import Navigation from '../components/Navigation/Navigation';
+import TutorsList from "../components/Tutors/TutorsList/TutorsList";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/ads" component={AdsList} />
+          <Route path="/tutors" component={TutorsList} />
         </Switch>
       </div>
     </BrowserRouter>
