@@ -1,0 +1,33 @@
+.card {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.card-title {
+  font-weight: 700;
+}
+
+.location {
+  background-color:#5603ad;
+  width: 50%;
+  height: 2rem;
+  border-radius: 10px;
+  & span {
+    color: '#fff';
+  }
+}
+
+.price {
+  width: 50%;
+  background-color: #5603ad;
+  border-radius: 10px;
+}
+
+.detail-link {
+  background-color: #2dce89;
+  border-radius: 10px;
+  padding: 7px 25px;
+  cursor: pointer;
+}
+
+[type="radio"] {
+  display: none;
+}
