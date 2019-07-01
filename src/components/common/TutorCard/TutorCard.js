@@ -7,15 +7,17 @@ import {
   Card,
   CardBody,
   CardImg,
-  CardTitle,
+  CardTitle, Row,
 
 } from "reactstrap";
 import './style.scss'
+import Language from "./Language";
+import Skill from "./Skill";
 
 class TutorCard extends React.Component {
 
   render(){
-    const {firstName, lastName, rating} = this.props.tutor;
+    const {firstName, lastName, rating, language, skill} = this.props.tutor;
     return (
       <Card className="card" >
         <CardBody>
@@ -32,12 +34,17 @@ class TutorCard extends React.Component {
           </section>
           <section className="ad-info d-flex flex-row">
             <div className="location text-white px-1 d-flex flex-row justify-content-center align-items-center">
-              <span className="pr-2">Mumbai</span><span><i class="fa fa-map-marker"></i></span>
+              <span className="pr-2">Mumbai</span><span><i className="fa fa-map-marker"></i></span>
             </div>
-            <div className="price text-white px-1 d-flex flex-row justify-content-center align-items-center">
-              <span>&#x00024;</span><span>82</span>
-            </div>
+            {language.map(lang => <Language lang={lang}/>)}
           </section>
+          <section className="ad-info d-flex flex-row">
+            {/*<div className="location text-white px-1 d-flex flex-row justify-content-center align-items-center">*/}
+            {/*  <span className="pr-2">Mumbai</span><span><i className="fa fa-map-marker"></i></span>*/}
+            {/*</div>*/}
+            {skill.map(skill => <Skill skill={skill}/>)}
+          </section>
+
         </CardBody>
       </Card>
     )
