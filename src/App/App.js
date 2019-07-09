@@ -14,6 +14,9 @@ import Register from '../components/Register/Register'
 import AdsList from '../components/AdsList/AdsList'
 import Navigation from '../components/Navigation/Navigation';
 import Profile from '../components/Profile/Profile'
+import Categories from '../components/Categories/Categories'
+import Tutors from '../components/Tutors/Tutors'
+import Dashboard from '../components/Dashboard/Dashboard'
 import PrivateRoute from '../utils/PrivateRoute'
 
 function App() {
@@ -26,9 +29,12 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/ads" component={AdsList} />
+          <Route path="/categories" component={Categories} />
+          <Route path="/tutors" component={Tutors} />
 
           {/* Private routes */}
           <Route path="/profile" component={Profile} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </div>
     </BrowserRouter>

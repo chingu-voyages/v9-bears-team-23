@@ -85,17 +85,24 @@ class DemoNavbar extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Categories
+                    <Link to="/categories" style={{ color: 'white' }}>
+                      Categories
+                    </Link>
+                    <span className="sr-only">(current)</span>
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Tutors
+                    <Link to="/tutors" style={{ color: 'white' }}>
+                      Tutors
+                    </Link>
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Dashboard
+                    <Link to="/dashboard" style={{ color: 'white' }}>
+                      Dashboard
+                    </Link>
                   </NavLink>
                 </NavItem>
                 <NavItem>
